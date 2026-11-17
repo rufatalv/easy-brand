@@ -1,0 +1,85 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "typography",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "tokens": {
+    "font-display": {
+      "$value": "\"Fraunces\", Georgia, \"Times New Roman\", serif", "$type": "fontFamily",
+      "$description": "Variable soft serif for display, headings, quotes, prices and the wordmark.",
+      "status": "observed", "source": ["site/styles/tokens.css:19 --qp-font-display", "site/index.html Google Fonts link"],
+      "license": "SIL Open Font License (Google Fonts)",
+      "axes": { "opsz": "9..144", "wght": "400..600", "SOFT": 50 }
+    },
+    "font-sans": {
+      "$value": "\"Inter\", system-ui, -apple-system, \"Segoe UI\", sans-serif", "$type": "fontFamily",
+      "$description": "Body, UI, h3, buttons, nav.",
+      "status": "observed", "source": ["site/styles/tokens.css:20 --qp-font-sans"],
+      "license": "SIL Open Font License (Google Fonts)", "weights": [400, 500, 600]
+    },
+    "font-mono": {
+      "$value": "\"JetBrains Mono\", ui-monospace, \"SF Mono\", Menlo, monospace", "$type": "fontFamily",
+      "$description": "Metadata voice: eyebrows, numerals, tags, citations, timestamps.",
+      "status": "observed", "source": ["site/styles/tokens.css:21 --qp-font-mono"],
+      "license": "SIL Open Font License (Google Fonts)", "weights": [500]
+    },
+    "display": {
+      "$type": "typography", "$description": "Hero headline (h1.display)",
+      "$value": { "fontFamily": "font-display", "fontWeight": 600, "fontSize": "clamp(3rem, 7vw, 6rem)", "lineHeight": 0.95, "letterSpacing": "-0.03em", "fontVariationSettings": "\"opsz\" 144, \"SOFT\" 50" },
+      "status": "observed", "source": ["site/styles/main.css .display"],
+      "responsive": { "390": "48px", "1440": "96px" }
+    },
+    "h2": {
+      "$type": "typography", "$description": "Section headline",
+      "$value": { "fontFamily": "font-display", "fontWeight": 600, "fontSize": "clamp(2rem, 4vw, 3.25rem)", "lineHeight": 1.05, "letterSpacing": "-0.02em", "fontVariationSettings": "\"opsz\" 96" },
+      "status": "observed", "source": ["site/styles/main.css h2"],
+      "responsive": { "390": "32px", "1440": "52px" }
+    },
+    "h3": {
+      "$type": "typography", "$description": "Card and plan titles. Sans, not serif.",
+      "$value": { "fontFamily": "font-sans", "fontWeight": 600, "fontSize": "1.375rem", "lineHeight": 1.25, "letterSpacing": "-0.01em" },
+      "status": "observed", "source": ["site/styles/main.css h3"]
+    },
+    "quote": {
+      "$type": "typography", "$description": "Testimonial on forest",
+      "$value": { "fontFamily": "font-display", "fontWeight": 400, "fontStyle": "italic", "fontSize": "clamp(1.75rem, 3.5vw, 2.75rem)", "lineHeight": 1.2, "letterSpacing": "-0.01em", "maxWidth": "24ch" },
+      "status": "observed", "source": ["site/styles/main.css .forest blockquote"]
+    },
+    "price": {
+      "$type": "typography", "$description": "Pricing figure",
+      "$value": { "fontFamily": "font-display", "fontWeight": 600, "fontSize": "3.5rem", "lineHeight": 1, "letterSpacing": "-0.03em" },
+      "status": "observed", "source": ["site/styles/main.css .plan .price"]
+    },
+    "lede": {
+      "$type": "typography", "$description": "Intro paragraph under display",
+      "$value": { "fontFamily": "font-sans", "fontWeight": 400, "fontSize": "1.25rem", "lineHeight": 1.5, "letterSpacing": "0", "maxWidth": "34ch", "color": "qp-ink-muted" },
+      "status": "observed", "source": ["site/styles/main.css .lede"]
+    },
+    "body": {
+      "$type": "typography", "$description": "Default body",
+      "$value": { "fontFamily": "font-sans", "fontWeight": 400, "fontSize": "1.0625rem", "lineHeight": 1.6, "letterSpacing": "0" },
+      "status": "observed", "source": ["site/styles/main.css body"]
+    },
+    "eyebrow": {
+      "$type": "typography", "$description": "Section label. Always prefixed with a signal-colored '§ '.",
+      "$value": { "fontFamily": "font-mono", "fontWeight": 500, "fontSize": "0.75rem", "lineHeight": 1.6, "letterSpacing": "0.08em", "textTransform": "uppercase", "color": "qp-ink-muted" },
+      "status": "observed", "source": ["site/styles/main.css .eyebrow, .eyebrow::before"]
+    },
+    "caption": {
+      "$type": "typography", "$description": "Metadata: note meta, citations, card numerals. Same spec as eyebrow without the § marker.",
+      "$value": { "fontFamily": "font-mono", "fontWeight": 500, "fontSize": "0.75rem", "letterSpacing": "0.08em", "textTransform": "uppercase" },
+      "status": "inferred", "source": ["site/styles/main.css .note-card .meta", "site/styles/main.css .forest cite", "site/styles/main.css .card .num"]
+    },
+    "nav": {
+      "$type": "typography", "$description": "Navigation links",
+      "$value": { "fontFamily": "font-sans", "fontWeight": 500, "fontSize": "0.9375rem", "lineHeight": 1.6, "color": "qp-ink-muted" },
+      "status": "observed", "source": ["site/styles/main.css .nav-links a"]
+    },
+    "button": {
+      "$type": "typography", "$description": "Button label",
+      "$value": { "fontFamily": "font-sans", "fontWeight": 600, "fontSize": "0.9375rem", "lineHeight": 1, "letterSpacing": "0" },
+      "status": "observed", "source": ["site/styles/main.css .btn"]
+    }
+  },
+  "recommended": {}
+}

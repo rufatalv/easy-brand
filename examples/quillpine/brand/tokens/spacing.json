@@ -1,0 +1,24 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "spacing",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "base": "8px (with 4px and 12px half-steps)",
+  "tokens": {
+    "qp-space-1": { "$value": "4px", "$type": "dimension", "$description": "Tag gaps", "status": "observed", "source": ["site/styles/tokens.css:24"] },
+    "qp-space-2": { "$value": "8px", "$type": "dimension", "$description": "Icon/text gap, list item padding", "status": "observed", "source": ["site/styles/tokens.css:25"] },
+    "qp-space-3": { "$value": "12px", "$type": "dimension", "$description": "Button group gap, h3 margin", "status": "observed", "source": ["site/styles/tokens.css:26"] },
+    "qp-space-4": { "$value": "16px", "$type": "dimension", "$description": "Eyebrow to headline", "status": "observed", "source": ["site/styles/tokens.css:27"] },
+    "qp-space-5": { "$value": "24px", "$type": "dimension", "$description": "Card grid gap, mobile page margin, h2 bottom margin", "status": "observed", "source": ["site/styles/tokens.css:28"] },
+    "qp-space-6": { "$value": "32px", "$type": "dimension", "$description": "Card padding", "status": "observed", "source": ["site/styles/tokens.css:29"] },
+    "qp-space-7": { "$value": "48px", "$type": "dimension", "$description": "Headline to content block, desktop page margin", "status": "observed", "source": ["site/styles/tokens.css:30"] },
+    "qp-space-8": { "$value": "64px", "$type": "dimension", "$description": "Mobile section padding, hero column gap", "status": "observed", "source": ["site/styles/tokens.css:31"] },
+    "qp-space-9": { "$value": "96px", "$type": "dimension", "$description": "Hero top padding", "status": "observed", "source": ["site/styles/tokens.css:32"] },
+    "qp-space-10": { "$value": "128px", "$type": "dimension", "$description": "Desktop section padding", "status": "observed", "source": ["site/styles/tokens.css:33"] }
+  },
+  "recommended": {},
+  "inconsistencies": [
+    { "value": "14px 22px", "locations": ["site/styles/main.css .btn padding"], "note": "Button padding sits off the 8px scale. It is applied consistently, so treat it as a component constant rather than an error." },
+    { "value": "72px", "locations": ["site/styles/main.css .note-card padding-left"], "note": "Clears the 48px margin line + 24px. Derived, not a scale step." }
+  ]
+}

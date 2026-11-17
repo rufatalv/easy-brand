@@ -1,0 +1,16 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "radius",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "tokens": {
+    "qp-radius-sm": { "$value": "4px", "$type": "dimension", "$description": "Tags and small chips", "status": "observed", "source": ["site/styles/tokens.css:36", "site/styles/main.css .note-card .tag"] },
+    "qp-radius-card": { "$value": "14px", "$type": "dimension", "$description": "Cards, ruled note card, any content panel", "status": "observed", "source": ["site/styles/tokens.css:37", "site/styles/main.css .card, .ruled"] },
+    "qp-radius-pill": { "$value": "999px", "$type": "dimension", "$description": "All buttons", "status": "observed", "source": ["site/styles/tokens.css:38", "site/styles/main.css .btn"] },
+    "logo-tile": { "$value": "7px", "$type": "dimension", "$description": "Logo mark tile (rx=7 on 28px)", "status": "observed", "source": ["site/assets/logo.svg rect rx"] }
+  },
+  "recommended": {},
+  "inconsistencies": [
+    { "value": "12px", "locations": ["site/styles/main.css .plan border-radius"], "note": "Pricing plans hard-code 12px while every other panel uses --qp-radius-card (14px)." }
+  ]
+}

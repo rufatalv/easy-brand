@@ -1,0 +1,20 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "shadow",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "tokens": {
+    "qp-shadow-lift": {
+      "$value": "0 1px 0 #D9D1C3, 0 12px 24px -12px rgba(28, 26, 23, 0.25)", "$type": "shadow",
+      "$description": "The only shadow: a hairline at the base plus a soft, tight drop. Like a sheet of paper resting on paper.",
+      "status": "observed", "source": ["site/styles/tokens.css:40 --qp-shadow-lift"],
+      "usage": "Hero note card, featured plan, card hover"
+    },
+    "qp-border": {
+      "$value": "1px solid #D9D1C3", "$type": "border",
+      "$description": "Default border for panels and section dividers",
+      "status": "observed", "source": ["site/styles/tokens.css:39 --qp-border"]
+    }
+  },
+  "recommended": {}
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "layout",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "tokens": {
+    "qp-container": { "$value": "1200px", "$type": "dimension", "$description": "Max content width", "status": "observed", "source": ["site/styles/tokens.css:43"] },
+    "page-margin": { "$value": { "base": "24px", "768": "48px" }, "$type": "object", "$description": "Container side padding", "status": "observed", "source": ["site/styles/main.css .container"] },
+    "breakpoints": { "$value": { "md": "768px", "lg": "1024px" }, "$type": "object", "$description": "Only two breakpoints (min-width). Mobile-first.", "status": "observed", "source": ["site/styles/main.css @media"] },
+    "hero-grid": { "$value": { "columns": "7fr 5fr", "from": "1024px", "align": "end", "gap": "64px" }, "$type": "object", "$description": "Asymmetric hero: copy left, artifact right, aligned to bottom", "status": "observed", "source": ["site/styles/main.css .hero-grid"] },
+    "card-grid": { "$value": { "columns": 3, "from": "768px", "gap": "24px" }, "$type": "object", "$description": "Feature cards", "status": "observed", "source": ["site/styles/main.css .features"] },
+    "section-padding": { "$value": { "base": "64px", "768": "128px" }, "$type": "object", "$description": "Vertical section padding; sections divided by a 1px rule", "status": "observed", "source": ["site/styles/main.css .section"] },
+    "qp-ruled": { "$value": "32px", "$type": "dimension", "$description": "Notebook line pitch; line-height on ruled surfaces", "status": "observed", "source": ["site/styles/tokens.css:45"] },
+    "margin-line": { "$value": "48px", "$type": "dimension", "$description": "Signal-colored vertical margin line, offset from left edge of ruled surfaces", "status": "observed", "source": ["site/styles/main.css .ruled"] },
+    "measure": { "$value": { "lede": "34ch", "quote": "24ch" }, "$type": "object", "$description": "Line length limits", "status": "observed", "source": ["site/styles/main.css .lede, .forest blockquote"] }
+  },
+  "recommended": {}
+}

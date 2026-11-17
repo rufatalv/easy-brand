@@ -47,6 +47,20 @@ def parse_color(value):
     return None
 
 
+def is_translucent(value):
+    """True if the color has alpha < 1 (contrast depends on what is underneath)."""
+    v = value.strip().lower() if isinstance(value, str) else ""
+    m = re.fullmatch(r"#(?:[0-9a-f]{3}([0-9a-f])|[0-9a-f]{6}([0-9a-f]{2}))", v)
+    if m:
+        a = m.group(1) or m.group(2)
+        return int(a * (2 // len(a)), 16) < 255
+    m = re.search(r"[,/]\s*([\d.]+)(%?)\s*\)$", v)
+    if m and re.match(r"(rgb|hsl)a?\(", v) and v.count(",") != 2:
+        a = float(m.group(1)) / (100 if m.group(2) else 1)
+        return a < 1
+    return False
+
+
 def luminance(rgb):
     def ch(c):
         c /= 255
@@ -241,15 +255,20 @@ def cmd_contrast(args):
 
 def cmd_matrix(args):
     data = json.loads(Path(args.colors_json).read_text(encoding="utf-8"))
-    colors = {}
-    for name, tok in iter_tokens(data.get("tokens", data)):
-        rgb = parse_color(tok.get("$value"))
+    colors, skipped = {}, []
+
+    def add(name, val):
+        if is_translucent(val):
+            skipped.append(name)
+            return
+        rgb = parse_color(val)
         if rgb:
-            colors[name] = (tok["$value"], rgb)
+            colors[name] = (val, rgb)
+
+    for name, tok in iter_tokens(data.get("tokens", data)):
+        add(name, tok.get("$value"))
         for theme, val in (tok.get("themes") or {}).items():
-            rgb = parse_color(val)
-            if rgb:
-                colors[f"{name}@{theme}"] = (val, rgb)
+            add(f"{name}@{theme}", val)
     rows = []
     for (n1, (v1, c1)), (n2, (v2, c2)) in combinations(colors.items(), 2):
         r = contrast_ratio(c1, c2)
@@ -263,6 +282,8 @@ def cmd_matrix(args):
         aaa = "yes" if lv["AAA normal"] else ("lg" if lv["AAA large"] else "no")
         print(f"{r:7.2f}  {aa:<4} {aaa:<4} {n1} ({v1}) / {n2} ({v2})")
     print(f"\n{len(colors)} colors, {len(rows)} pairs with ratio >= {args.min}")
+    if skipped:
+        print(f"Skipped translucent (check over their real background): {', '.join(skipped)}")
     print("AA/AAA: yes = normal text passes, lg = large text/UI only, no = fails")
     return 0
 

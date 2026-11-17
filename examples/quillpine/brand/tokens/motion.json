@@ -1,0 +1,34 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "motion",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "library": "CSS transitions + IntersectionObserver (no animation library)",
+  "tokens": {
+    "qp-ease-out": { "$value": [0.2, 0.7, 0.2, 1], "$type": "cubicBezier", "$description": "Reveal easing: quick start, long gentle settle", "status": "observed", "source": ["site/styles/tokens.css:48"] },
+    "qp-duration-fast": { "$value": "180ms", "$type": "duration", "$description": "Hover and color changes (with plain ease-out)", "status": "observed", "source": ["site/styles/tokens.css:49", "site/styles/main.css .btn, .card"] },
+    "qp-duration-reveal": { "$value": "600ms", "$type": "duration", "$description": "Scroll reveal", "status": "observed", "source": ["site/styles/tokens.css:50"] },
+    "qp-stagger": { "$value": "80ms", "$type": "duration", "$description": "Per-item delay, set by --i index (0 to 3)", "status": "observed", "source": ["site/styles/tokens.css:51", "site/index.html style=\"--i:n\""] },
+    "reveal": {
+      "$type": "transition", "$description": "Fade and rise 16px when 15% visible; runs once",
+      "$value": { "from": { "opacity": 0, "transform": "translateY(16px)" }, "to": { "opacity": 1, "transform": "none" }, "duration": "qp-duration-reveal", "timingFunction": "qp-ease-out", "trigger": "IntersectionObserver threshold 0.15, rootMargin 0 0 -10% 0", "once": true },
+      "status": "observed", "source": ["site/styles/main.css .reveal", "site/scripts/reveal.js"]
+    },
+    "card-hover": {
+      "$type": "transition", "$description": "Card lifts 2px and gains qp-shadow-lift",
+      "$value": { "transform": "translateY(-2px)", "boxShadow": "qp-shadow-lift", "duration": "qp-duration-fast", "timingFunction": "ease-out" },
+      "status": "observed", "source": ["site/styles/main.css .card:hover"]
+    },
+    "arrow-nudge": {
+      "$type": "transition", "$description": "→ in a button moves 3px right on hover",
+      "$value": { "transform": "translateX(3px)", "duration": "qp-duration-fast", "timingFunction": "ease-out" },
+      "status": "observed", "source": ["site/styles/main.css .btn:hover .arrow"]
+    },
+    "reduced-motion": {
+      "$type": "transition", "$description": "prefers-reduced-motion: reveals show at once and all transitions are off",
+      "$value": { "transition": "none", "opacity": 1, "transform": "none" },
+      "status": "observed", "source": ["site/styles/main.css @media (prefers-reduced-motion)", "site/scripts/reveal.js"]
+    }
+  },
+  "recommended": {}
+}

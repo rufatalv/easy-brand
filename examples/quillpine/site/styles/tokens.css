@@ -1,0 +1,52 @@
+/* Quillpine design tokens */
+:root {
+  /* Color */
+  --qp-paper: #F4EFE6;
+  --qp-paper-raised: #FBF8F2;
+  --qp-ink: #1C1A17;
+  --qp-ink-muted: #5F5950;
+  --qp-rule: #D9D1C3;
+  --qp-signal: #E4572E;
+  --qp-signal-ink: #B83A16;
+  --qp-forest: #23332B;
+  --qp-on-forest: #EDE6D8;
+  --qp-on-forest-muted: #A9B3A6;
+  --qp-success: #3B7A57;
+  --qp-error: #B3261E;
+  --qp-highlight: rgba(228, 87, 46, 0.22);
+
+  /* Type */
+  --qp-font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --qp-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --qp-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Space (8px base) */
+  --qp-space-1: 4px;
+  --qp-space-2: 8px;
+  --qp-space-3: 12px;
+  --qp-space-4: 16px;
+  --qp-space-5: 24px;
+  --qp-space-6: 32px;
+  --qp-space-7: 48px;
+  --qp-space-8: 64px;
+  --qp-space-9: 96px;
+  --qp-space-10: 128px;
+
+  /* Shape */
+  --qp-radius-sm: 4px;
+  --qp-radius-card: 14px;
+  --qp-radius-pill: 999px;
+  --qp-border: 1px solid var(--qp-rule);
+  --qp-shadow-lift: 0 1px 0 var(--qp-rule), 0 12px 24px -12px rgba(28, 26, 23, 0.25);
+
+  /* Layout */
+  --qp-container: 1200px;
+  --qp-gutter: 24px;
+  --qp-ruled: 32px;
+
+  /* Motion */
+  --qp-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --qp-duration-fast: 180ms;
+  --qp-duration-reveal: 600ms;
+  --qp-stagger: 80ms;
+}

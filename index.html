@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>easy-brand — brand-extractor agent skill</title>
+  <meta name="description" content="An agent skill that reverse-engineers an existing product's visual identity into an evidence-based brand system, design tokens and a reusable brand-identity skill.">
+  <style>
+    :root {
+      --bg: #fafaf9; --fg: #18181b; --muted: #57575f; --line: #e4e4e7; --card: #ffffff; --code: #f4f4f5; --link: #1d4ed8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #111113; --fg: #ececee; --muted: #a1a1aa; --line: #2a2a2e; --card: #18181b; --code: #1f1f23; --link: #8ab4ff; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    a { color: var(--link); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+    header { padding: 72px 0 40px; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 16px; }
+    h2 { font-size: 1.5rem; letter-spacing: -0.01em; margin: 56px 0 8px; }
+    h3 { font-size: 1rem; margin: 0 0 4px; }
+    p.lede { font-size: 1.15rem; color: var(--muted); max-width: 60ch; margin: 0 0 24px; }
+    pre { background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; overflow-x: auto; font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; margin: 0; }
+    .links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); margin-top: 20px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .card:hover { border-color: var(--muted); }
+    .card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: left top; border-bottom: 1px solid var(--line); background: #ddd; }
+    .card .body { padding: 12px 14px 14px; }
+    .card small { color: var(--muted); }
+    .wide { grid-column: 1 / -1; }
+    .wide img { aspect-ratio: auto; max-height: 520px; }
+    ul.files { columns: 2 260px; padding-left: 18px; margin: 12px 0 0; }
+    footer { border-top: 1px solid var(--line); margin-top: 72px; padding: 24px 0 48px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>brand-extractor</h1>
+      <p class="lede">An agent skill that reverse-engineers the existing visual identity of a website or app into an evidence-based brand system: design tokens, guidelines, voice, template specs, and a generated skill that keeps future agents on-brand. It documents; it never redesigns.</p>
+      <pre>npx skills add rufatalv/easy-brand</pre>
+      <div class="links">
+        <a href="https://github.com/rufatalv/easy-brand">GitHub repository</a>
+        <a href="https://github.com/rufatalv/easy-brand/blob/main/skills/brand-extractor/SKILL.md">SKILL.md</a>
+        <a href="https://github.com/rufatalv/easy-brand/tree/main/examples/quillpine">Example walkthrough</a>
+      </div>
+    </header>
+
+    <h2>Example: Quillpine</h2>
+    <p>Quillpine is a fictional product made up for this demo. The skill was run on its marketing site, and everything below the source site was generated from the extracted tokens.</p>
+
+    <div class="grid">
+      <a class="card wide" href="examples/quillpine/site/">
+        <img src="examples/quillpine/screenshots/site-1440.png" alt="Quillpine source site">
+        <div class="body"><h3>Source site</h3><small>Input · static HTML/CSS · open live →</small></div>
+      </a>
+      <a class="card" href="examples/quillpine/brand/templates/social/editorial-post.html">
+        <img src="examples/quillpine/screenshots/template-editorial-post.png" alt="Editorial Instagram post">
+        <div class="body"><h3>Editorial post</h3><small>Instagram feed · 1080×1350</small></div>
+      </a>
+      <a class="card" href="examples/quillpine/brand/templates/social/quote-story.html">
+        <img src="examples/quillpine/screenshots/template-quote-story.png" alt="Quote story">
+        <div class="body"><h3>Quote story</h3><small>Instagram Story · 1080×1920</small></div>
+      </a>
+      <a class="card" href="examples/quillpine/brand/templates/web/og-image.html">
+        <img src="examples/quillpine/screenshots/template-og-image.png" alt="Open Graph image">
+        <div class="body"><h3>Open Graph image</h3><small>1200×630</small></div>
+      </a>
+      <a class="card" href="examples/quillpine/brand/templates/advertising/mrec-300x250.html">
+        <img src="examples/quillpine/screenshots/template-mrec.png" alt="300 by 250 ad">
+        <div class="body"><h3>Display ad</h3><small>IAB 300×250</small></div>
+      </a>
+    </div>
+
+    <h2>Generated brand package</h2>
+    <p>Every token cites the source line it came from. Every rule is labeled Observed, Inferred or Recommended.</p>
+    <ul class="files">
+      <li><a href="https://github.com/rufatalv/easy-brand/blob/main/examples/quillpine/brand/BRAND_GUIDELINES.md">BRAND_GUIDELINES.md</a></li>
+      <li><a href="https://github.com/rufatalv/easy-brand/blob/main/examples/quillpine/brand/BRAND_AUDIT.md">BRAND_AUDIT.md</a>: conflicts and gaps</li>
+      <li><a href="https://github.com/rufatalv/easy-brand/blob/main/examples/quillpine/brand/BRAND_VOICE.md">BRAND_VOICE.md</a></li>
+      <li><a href="https://github.com/rufatalv/easy-brand/blob/main/examples/quillpine/brand/references/visual-dna.md">references/visual-dna.md</a></li>
+      <li><a href="examples/quillpine/brand/tokens/colors.json">tokens/colors.json</a></li>
+      <li><a href="examples/quillpine/brand/tokens/typography.json">tokens/typography.json</a></li>
+      <li><a href="examples/quillpine/brand/tokens/motion.json">tokens/motion.json</a></li>
+      <li><a href="examples/quillpine/brand/tokens/colors.css">tokens/colors.css</a></li>
+      <li><a href="https://github.com/rufatalv/easy-brand/blob/main/examples/quillpine/brand/skills/brand-identity/SKILL.md">skills/brand-identity/SKILL.md</a>: generated agent skill</li>
+      <li><a href="https://github.com/rufatalv/easy-brand/tree/main/examples/quillpine/brand">Browse everything →</a></li>
+    </ul>
+
+    <footer>MIT licensed · <a href="https://github.com/rufatalv/easy-brand">rufatalv/easy-brand</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* Shared base for Quillpine template examples. Only extracted tokens are used. */
+@import url("../tokens/colors.css");
+
+:root {
+  --qp-font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --qp-font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --qp-font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --qp-radius-card: 14px;
+  --qp-radius-sm: 4px;
+  --qp-radius-pill: 999px;
+  --qp-ruled: 32px;
+  --qp-shadow-lift: 0 1px 0 var(--qp-rule), 0 12px 24px -12px rgba(28, 26, 23, 0.25);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: #888; -webkit-font-smoothing: antialiased; }
+
+.canvas {
+  position: relative;
+  overflow: hidden;
+  background: var(--qp-paper);
+  color: var(--qp-ink);
+  font-family: var(--qp-font-sans);
+}
+
+.canvas.forest { background: var(--qp-forest); color: var(--qp-on-forest); }
+
+.eyebrow {
+  font-family: var(--qp-font-mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--qp-ink-muted);
+  margin: 0;
+}
+.eyebrow::before { content: "§ "; color: var(--qp-signal); }
+.forest .eyebrow { color: var(--qp-on-forest-muted); }
+
+.display {
+  font-family: var(--qp-font-display);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  margin: 0;
+}
+
+mark {
+  background: linear-gradient(transparent 55%, var(--qp-highlight) 55%);
+  color: inherit;
+}
+
+.lede { color: var(--qp-ink-muted); margin: 0; line-height: 1.5; }
+.forest .lede { color: var(--qp-on-forest-muted); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: var(--qp-radius-pill);
+  border: 1px solid var(--qp-ink);
+  background: var(--qp-ink);
+  color: var(--qp-paper);
+}
+
+.ruled {
+  background-color: var(--qp-paper-raised);
+  background-image:
+    linear-gradient(90deg, transparent 47px, var(--qp-signal) 47px, var(--qp-signal) 48px, transparent 48px),
+    repeating-linear-gradient(transparent 0 calc(var(--qp-ruled) - 1px), var(--qp-rule) calc(var(--qp-ruled) - 1px) var(--qp-ruled));
+  border: 1px solid var(--qp-rule);
+  border-radius: var(--qp-radius-card);
+  box-shadow: var(--qp-shadow-lift);
+  line-height: var(--qp-ruled);
+  color: var(--qp-ink);
+}
+
+.meta {
+  font-family: var(--qp-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--qp-ink-muted);
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--qp-font-mono);
+  font-size: 12px;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: var(--qp-radius-sm);
+  background: var(--qp-forest);
+  color: var(--qp-on-forest);
+  margin-right: 4px;
+}
+
+.logo { display: block; }

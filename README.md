@@ -22,6 +22,14 @@ or
 
 > Use brand-extractor on this repo.
 
+## Example
+
+See a full run on a sample product site in **[examples/quillpine](examples/quillpine/)**, or browse it live at **https://rufatalv.github.io/easy-brand/**.
+
+| Source site | Generated templates |
+|---|---|
+| <img src="examples/quillpine/screenshots/site-1440.png" width="380"> | <img src="examples/quillpine/screenshots/template-editorial-post.png" width="190"> <img src="examples/quillpine/screenshots/template-og-image.png" width="260"> |
+
 ## What you get
 
 ```text

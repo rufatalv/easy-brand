@@ -1,0 +1,114 @@
+{
+  "$schema": "brand-extractor/tokens@1",
+  "category": "color",
+  "generated": "2026-11-17",
+  "project": "Quillpine",
+  "themes": ["light"],
+  "tokens": {
+    "qp-paper": {
+      "$value": "#F4EFE6", "$type": "color",
+      "$description": "Page background. Warm off-white that reads as paper.",
+      "status": "observed", "source": ["site/styles/tokens.css:4 --qp-paper", "site/styles/main.css body"],
+      "role": "background", "tier": "core", "rgb": "244 239 230",
+      "usage": "Default page and canvas background"
+    },
+    "qp-paper-raised": {
+      "$value": "#FBF8F2", "$type": "color",
+      "$description": "Raised surface one step lighter than paper.",
+      "status": "observed", "source": ["site/styles/tokens.css:5 --qp-paper-raised", "site/styles/main.css .card, .plan, .ruled"],
+      "role": "surface", "tier": "supporting", "rgb": "251 248 242",
+      "usage": "Cards, pricing plans, ruled note card"
+    },
+    "qp-ink": {
+      "$value": "#1C1A17", "$type": "color",
+      "$description": "Primary text and primary button fill. Warm near-black, never pure #000.",
+      "status": "observed", "source": ["site/styles/tokens.css:6 --qp-ink"],
+      "role": "foreground", "tier": "core", "rgb": "28 26 23",
+      "usage": "Headlines, body text, primary button, logo tile",
+      "contrast": { "on": "qp-paper", "ratio": 15.16, "level": "AAA" }
+    },
+    "qp-ink-muted": {
+      "$value": "#5F5950", "$type": "color",
+      "$description": "Secondary text.",
+      "status": "observed", "source": ["site/styles/tokens.css:7 --qp-ink-muted"],
+      "role": "muted", "tier": "supporting", "rgb": "95 89 80",
+      "usage": "Ledes, card body, nav links, eyebrows, footer",
+      "contrast": { "on": "qp-paper", "ratio": 6.05, "level": "AA" }
+    },
+    "qp-rule": {
+      "$value": "#D9D1C3", "$type": "color",
+      "$description": "Hairline borders and notebook rule lines.",
+      "status": "observed", "source": ["site/styles/tokens.css:8 --qp-rule", "site/styles/tokens.css:39 --qp-border"],
+      "role": "border", "tier": "supporting", "rgb": "217 209 195",
+      "usage": "1px borders, section dividers, ruled-paper lines. Decorative only, never text."
+    },
+    "qp-signal": {
+      "$value": "#E4572E", "$type": "color",
+      "$description": "Brand accent. Signal orange used in small doses.",
+      "status": "observed", "source": ["site/styles/tokens.css:9 --qp-signal", "site/assets/logo.svg"],
+      "role": "accent", "tier": "core", "rgb": "228 87 46",
+      "usage": "§ eyebrow marker, notebook margin line, list dashes, focus ring, logo quill stroke. Graphic marks only: fails AA for text on paper.",
+      "contrast": { "on": "qp-paper", "ratio": 3.22, "level": "AA large/UI only" }
+    },
+    "qp-signal-ink": {
+      "$value": "#B83A16", "$type": "color",
+      "$description": "Darker accent for text-sized accent use and primary-button hover.",
+      "status": "observed", "source": ["site/styles/tokens.css:10 --qp-signal-ink", "site/styles/main.css .btn-primary:hover, .card .num"],
+      "role": "interactive", "tier": "core", "rgb": "184 58 22",
+      "usage": "Card numerals, primary button hover fill",
+      "contrast": { "on": "qp-paper-raised", "ratio": 5.42, "level": "AA" }
+    },
+    "qp-forest": {
+      "$value": "#23332B", "$type": "color",
+      "$description": "Deep forest green. The only dark surface.",
+      "status": "observed", "source": ["site/styles/tokens.css:11 --qp-forest", "site/styles/main.css .forest, .note-card .tag"],
+      "role": "background", "tier": "core", "rgb": "35 51 43",
+      "usage": "Full-bleed testimonial section, tag chips"
+    },
+    "qp-on-forest": {
+      "$value": "#EDE6D8", "$type": "color",
+      "$description": "Text on forest.",
+      "status": "observed", "source": ["site/styles/tokens.css:12 --qp-on-forest"],
+      "role": "foreground", "tier": "supporting", "rgb": "237 230 216",
+      "usage": "Quote text and tag text on forest",
+      "contrast": { "on": "qp-forest", "ratio": 10.70, "level": "AAA" }
+    },
+    "qp-on-forest-muted": {
+      "$value": "#A9B3A6", "$type": "color",
+      "$description": "Secondary text on forest.",
+      "status": "observed", "source": ["site/styles/tokens.css:13 --qp-on-forest-muted"],
+      "role": "muted", "tier": "supporting", "rgb": "169 179 166",
+      "usage": "Eyebrows and citations on forest",
+      "contrast": { "on": "qp-forest", "ratio": 6.13, "level": "AA" }
+    },
+    "qp-highlight": {
+      "$value": "rgba(228, 87, 46, 0.22)", "$type": "color",
+      "$description": "Highlighter wash: signal at 22% opacity, applied to the lower 45% of a line.",
+      "status": "observed", "source": ["site/styles/tokens.css:16 --qp-highlight", "site/styles/main.css mark"],
+      "role": "overlay", "tier": "decorative",
+      "usage": "<mark> on one key word or phrase per headline or note"
+    },
+    "qp-success": {
+      "$value": "#3B7A57", "$type": "color",
+      "$description": "Success state.",
+      "status": "observed", "source": ["site/styles/tokens.css:14 --qp-success"],
+      "role": "status", "tier": "functional", "rgb": "59 122 87",
+      "usage": "Declared but not used on the marketing site"
+    },
+    "qp-error": {
+      "$value": "#B3261E", "$type": "color",
+      "$description": "Error state.",
+      "status": "observed", "source": ["site/styles/tokens.css:15 --qp-error"],
+      "role": "status", "tier": "functional", "rgb": "179 38 30",
+      "usage": "Declared but not used on the marketing site"
+    }
+  },
+  "recommended": {},
+  "inconsistencies": [
+    {
+      "value": "#E5582F",
+      "locations": ["site/styles/main.css .footer a:hover"],
+      "note": "Hard-coded near-duplicate of qp-signal (#E4572E), off by one in each channel. Probably meant var(--qp-signal-ink): footer links are text, and #E5582F is only 3.18:1 on paper."
+    }
+  ]
+}

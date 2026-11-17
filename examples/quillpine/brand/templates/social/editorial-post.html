@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Template: social-editorial-01 · Instagram feed portrait 1080×1350 · Example, not an editor -->
+  <title>Quillpine · Editorial post</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,50;1,9..144,400,50&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../template-base.css">
+  <style>
+    .canvas { width: 1080px; height: 1350px; padding: 80px; display: flex; flex-direction: column; }
+    .eyebrow { font-size: 22px; }
+    .display { font-size: 132px; margin-top: 64px; }
+    .lede { font-size: 34px; max-width: 22ch; margin-top: 48px; }
+    .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--qp-rule); padding-top: 40px; }
+    .logo { height: 48px; }
+    .btn { font-size: 26px; padding: 22px 34px; }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <p class="eyebrow" data-slot="eyebrow">New in Quillpine</p>
+    <h1 class="display" data-slot="headline">Every interview, <mark>already</mark> linked.</h1>
+    <p class="lede" data-slot="body">Drop a recording. Quillpine transcribes it and joins it to the right threads.</p>
+    <div class="foot">
+      <img class="logo" src="../../assets/logos/quillpine-logo.svg" alt="Quillpine">
+      <span class="btn" data-slot="cta">Start writing <span>→</span></span>
+    </div>
+  </div>
+</body>
+</html>

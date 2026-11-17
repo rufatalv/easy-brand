@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Template: social-quote-story-01 · Instagram Story 1080×1920 · safe area: top 250px, bottom 340px · Example, not an editor -->
+  <title>Quillpine · Quote story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,50;1,9..144,400,50&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../template-base.css">
+  <style>
+    .canvas { width: 1080px; height: 1920px; padding: 250px 88px 340px; display: flex; flex-direction: column; }
+    .eyebrow { font-size: 24px; }
+    blockquote {
+      font-family: var(--qp-font-display); font-style: italic; font-weight: 400;
+      font-size: 84px; line-height: 1.15; letter-spacing: -0.01em;
+      margin: 72px 0 56px; max-width: 18ch;
+    }
+    cite { font-family: var(--qp-font-mono); font-style: normal; font-size: 24px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--qp-on-forest-muted); }
+    .note { margin-top: auto; padding: 32px 40px 32px 80px; font-size: 26px; }
+    .note p { margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="canvas forest">
+    <p class="eyebrow" data-slot="eyebrow">From the field</p>
+    <blockquote data-slot="quote">“We stopped re-running the same interviews. The answers were already in Quillpine.”</blockquote>
+    <cite data-slot="attribution">Head of Research, a 40-person design studio</cite>
+    <div class="ruled note">
+      <p class="meta">Interview 14 · 3 Mar</p>
+      <p>Ops leads keep a private spreadsheet of <mark>every vendor call</mark>.</p>
+      <p><span class="tag">#ops</span><span class="tag">#discovery</span></p>
+    </div>
+  </div>
+</body>
+</html>
